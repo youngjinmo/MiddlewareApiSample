@@ -60,4 +60,17 @@ public class ApiService {
         return vo;
     }
 
+    public static String returnToBody(TestVO request){
+        String response = "<html>"
+                        + "<body>"
+                        + "  <input type='text' name='name' value'"+request.getName()+"'>"
+                        + "  <input type='text' name='age' value'"+request.getAge()+"'>"
+                        + "  <input type='text' name='position' value'"+request.getPosition()+"'>"
+                        + "  <input type='text' name='goal' value'"+request.getGoal()+"'>"
+                        + "  <input type='text' name='nation' value'"+request.getNation()+"'>"
+                        + "</body>"
+                        + "</html>";
+        return response;
+    }
+
 }
