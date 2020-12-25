@@ -10,10 +10,10 @@ import java.util.Map;
 @Service
 public class ApiService {
 
-    public static Map<String, String> parseBody(String request){
+    public static Map<String, String> parseBody(String param){
         Map<String, String> response = new HashMap<>();
 
-        String[] tempArr = request.split("\\n");
+        String[] tempArr = param.split("\\n");
         for (int i = 0; i < tempArr.length; i++) {
             int idxName=0;
             int idxValue=0;
@@ -34,17 +34,14 @@ public class ApiService {
         return response;
     }
 
-    public static TestVO convertToVOFromMap(Map<String, String> request){
-
+    public static TestVO convertToVOFromMap(Map<String, String> param){
         ObjectMapper mapper = new ObjectMapper();
-        TestVO vo = mapper.convertValue(request, TestVO.class);
-
-        return vo;
+        return mapper.convertValue(param, TestVO.class);
     }
 
-    public static TestVO businessService(TestVO request){
+    public static TestVO businessService(TestVO param){
         TestVO vo = new TestVO();
-        if(request.getNation().equals("Korea")){
+        if(param.getNation().equals("Korea")){
             vo.setName("모영진");
             vo.setAge(30);
             vo.setPosition("수비수");
@@ -60,17 +57,16 @@ public class ApiService {
         return vo;
     }
 
-    public static String returnToBody(TestVO request){
-        String response = "<html>"
-                        + "<body>"
-                        + "  <input type='text' name='name' value'"+request.getName()+"'>"
-                        + "  <input type='text' name='age' value'"+request.getAge()+"'>"
-                        + "  <input type='text' name='position' value'"+request.getPosition()+"'>"
-                        + "  <input type='text' name='goal' value'"+request.getGoal()+"'>"
-                        + "  <input type='text' name='nation' value'"+request.getNation()+"'>"
-                        + "</body>"
-                        + "</html>";
-        return response;
+    public static String returnToBody(TestVO param){
+        return "<html>"
+                + "<body>"
+                + "  <input type='text' name='name' value'"+param.getName()+"'>"
+                + "  <input type='text' name='age' value'"+param.getAge()+"'>"
+                + "  <input type='text' name='position' value'"+param.getPosition()+"'>"
+                + "  <input type='text' name='goal' value'"+param.getGoal()+"'>"
+                + "  <input type='text' name='nation' value'"+param.getNation()+"'>"
+                + "</body>"
+                + "</html>";
     }
 
 }
