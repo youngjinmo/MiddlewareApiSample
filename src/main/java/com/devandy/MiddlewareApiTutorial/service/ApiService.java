@@ -42,4 +42,22 @@ public class ApiService {
         return vo;
     }
 
+    public static TestVO businessService(TestVO request){
+        TestVO vo = new TestVO();
+        if(request.getNation().equals("Korea")){
+            vo.setName("모영진");
+            vo.setAge(30);
+            vo.setPosition("수비수");
+            vo.setGoal(10);
+            vo.setNation("대한민국");
+        } else {
+            vo.setName("Youngjin Mo");
+            vo.setAge(29);
+            vo.setPosition("Defender");
+            vo.setGoal(10);
+            vo.setNation("Korea");
+        }
+        return vo;
+    }
+
 }
