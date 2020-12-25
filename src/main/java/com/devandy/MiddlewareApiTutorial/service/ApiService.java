@@ -1,5 +1,7 @@
 package com.devandy.MiddlewareApiTutorial.service;
 
+import com.devandy.MiddlewareApiTutorial.vo.TestVO;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -30,6 +32,14 @@ public class ApiService {
             }
         }
         return response;
+    }
+
+    public static TestVO convertToVOFromMap(Map<String, String> request){
+
+        ObjectMapper mapper = new ObjectMapper();
+        TestVO vo = mapper.convertValue(request, TestVO.class);
+
+        return vo;
     }
 
 }
