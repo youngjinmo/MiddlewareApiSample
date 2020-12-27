@@ -19,9 +19,9 @@ class ApiServiceTest {
                         "    <input type='text' name='position' value='수비수'>\n" +
                         "    <input type='text' name='goal' value='9'>\n" +
                         "    <input type='text' name='nation' value='Korea'>\n" +
-                        "</form>" +
-                        "</body>" +
-                        "</html>";
+                        "</form>\n" +
+                        "</body>\n" +
+                        "</html>\n";
 
         // when
         Map<String, String> actual = new HashMap<>();

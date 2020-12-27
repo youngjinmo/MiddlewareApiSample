@@ -89,13 +89,13 @@ public class ApiService {
     public static String returnToBody(TestVO param){
         return "<html>\n"
                 + "<body>\n"
-                + "  <form name='test' method='post' action='http://127.0.0.1:8080/api'>"
+                + "  <form name='test' method='post' action='http://127.0.0.1:8080/api'>\n"
                 + "    <input type='text' name='name' value='"+param.getName()+"'>\n"
                 + "    <input type='number' name='age' value="+param.getAge()+">\n"
                 + "    <input type='text' name='position' value="+param.getPosition()+"'>\n"
                 + "    <input type='number' name='goal' value="+param.getGoal()+">\n"
                 + "    <input type='text' name='nation' value='"+param.getNation()+"'>\n"
-                + "  </form>"
+                + "  </form>\n"
                 + "</body>\n"
                 + "</html>";
     }
