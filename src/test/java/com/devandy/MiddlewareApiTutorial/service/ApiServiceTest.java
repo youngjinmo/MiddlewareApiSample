@@ -100,6 +100,8 @@ class ApiServiceTest {
                 + "</body>\n"
                 + "</html>";
 
+        System.out.println("expected :"+expected+"\n****************");
+        System.out.println("actual : "+actual);
         assertEquals(expected, actual);
 
     }
