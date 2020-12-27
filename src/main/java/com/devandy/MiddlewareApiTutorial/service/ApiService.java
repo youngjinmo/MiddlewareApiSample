@@ -10,6 +10,16 @@ import java.util.Map;
 @Service
 public class ApiService {
 
+    public String integrationService(String param){
+        return returnToBody(businessService(convertToVOFromMap(parseBody(param))));
+    }
+
+    /**
+     *  전문에서 필요한 값만 json으로 파싱
+     *
+     * @param param
+     * @return
+     */
     public static Map<String, String> parseBody(String param){
         Map<String, String> response = new HashMap<>();
 
