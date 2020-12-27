@@ -25,19 +25,14 @@ public class ApiService {
 
         String[] tempArr = param.split("\\n");
         for (int i = 0; i < tempArr.length; i++) {
-            int idxName=0;
-            int idxValue=0;
             String name = "";
             String value = "";
 
             if(tempArr[i].contains("value")){
-                // returns index of name and value
-                idxName = tempArr[i].indexOf("name");
-                idxValue = tempArr[i].indexOf("value");
 
                 // returns value of name and value
-                name = tempArr[i].substring(idxName+6, idxValue-2);
-                value = tempArr[i].substring(idxValue+7, tempArr[i].length()-2);
+                name = tempArr[i].substring(tempArr[i].indexOf("name")+6, tempArr[i].indexOf("value")-2);
+                value = tempArr[i].substring(tempArr[i].indexOf("value")+7, tempArr[i].length()-2);
 
                 response.put(name, value);
             }
@@ -91,9 +86,9 @@ public class ApiService {
                 + "<body>\n"
                 + "  <form name='test' method='post' action='http://127.0.0.1:8080/api'>\n"
                 + "    <input type='text' name='name' value='"+param.getName()+"'>\n"
-                + "    <input type='number' name='age' value="+param.getAge()+">\n"
-                + "    <input type='text' name='position' value="+param.getPosition()+"'>\n"
-                + "    <input type='number' name='goal' value="+param.getGoal()+">\n"
+                + "    <input type='text' name='age' value='"+param.getAge()+"'>\n"
+                + "    <input type='text' name='position' value='"+param.getPosition()+"'>\n"
+                + "    <input type='text' name='goal' value='"+param.getGoal()+"'>\n"
                 + "    <input type='text' name='nation' value='"+param.getNation()+"'>\n"
                 + "  </form>\n"
                 + "</body>\n"
