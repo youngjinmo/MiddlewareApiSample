@@ -1,6 +1,6 @@
 # Middleware API 개발
 
-HTML Body에 HTML이 들어오는 API 개발.
+HTTP Body에 HTML이 들어오는 API 개발.
 
 HTML에서 VO에 해당하는 값만 파싱하여, 값을 가공후 다시 HTML로 재조합하여 반환하는 API.
 
